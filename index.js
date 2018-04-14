@@ -49,9 +49,9 @@ io.sockets.on('connection', function (socket) {
           var myobj = { 
         	    tweet_id: tweet.id, 
          	    tweet: tweet.text, 
-                twitter_handle_image: tweet.user.profile_image_url,
-                twitter_handle: tweet.user.screen_name, 
-                created_at: tweet.created_at,
+              twitter_handle_image: tweet.user.profile_image_url,
+              twitter_handle: tweet.user.screen_name, 
+              created_at: tweet.created_at,
            };
           dbo.collection("tweets").insertOne(myobj, function(err, res) {
             if (err) throw err;
